@@ -20,6 +20,10 @@ public class SMSThrough {
         return this;
     }
 
+    public void clearGateways() {
+        gateways.clear();
+    }
+
     public String send(String to, String message) {
         for (SMSGateway gateway : gateways) {
             if (gateway.send(to, message)) {
